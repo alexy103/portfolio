@@ -1,0 +1,427 @@
+html {
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  height: 5%;
+  background-color: #2d3c76;
+  z-index: 1;
+  border-bottom: 1px solid #dae5ff;
+  animation: slideTop 1s ease-in-out;
+}
+nav ul {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+nav ul li {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  border-right: 1px solid #dae5ff;
+}
+nav ul li:last-child {
+  border-right: none;
+}
+nav ul li a {
+  cursor: pointer;
+  color: rgb(198, 209, 255);
+  font-size: 1.2em;
+  transition: 0.5s;
+}
+nav ul li a .active {
+  color: white;
+  letter-spacing: 0.5rem;
+}
+nav ul li a:hover {
+  color: white;
+  letter-spacing: 0.5rem;
+}
+
+@keyframes slideTop {
+  from {
+    transform: translateY(-100%);
+  }
+}
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.page .titre {
+  text-align: center;
+  margin-top: 2em;
+  font-size: 2rem;
+}
+.page:nth-child(even) {
+  background-color: #dae5ff;
+}
+.page:nth-child(even) * {
+  color: #151c38;
+}
+.page:nth-child(odd) {
+  background-color: #2d3c76;
+}
+.page:nth-child(odd) * {
+  color: rgb(198, 209, 255);
+}
+.page:not(:first-child) {
+  min-height: 100vh;
+}
+
+@keyframes titleFadeIn {
+  to {
+    transform: translateY(-5%);
+  }
+}
+#page1 #bienvenue {
+  text-align: center;
+}
+#page1 #bienvenue h1 {
+  overflow: hidden;
+  font-size: 3em;
+  text-transform: uppercase;
+}
+#page1 #bienvenue h1 span {
+  transform: translateY(100%);
+  animation: titleFadeIn 0.75s ease-in-out forwards;
+  display: inline-block;
+  animation-delay: 1000ms;
+}
+#page1 #bienvenue h2 {
+  font-size: 1.5em;
+  margin-top: 1em;
+  font-weight: lighter;
+  overflow: hidden;
+}
+#page1 #bienvenue h2 span {
+  transform: translateY(100%);
+  animation: titleFadeIn 0.75s ease-in-out forwards;
+  display: inline-block;
+  animation-delay: 1500ms;
+}
+#page1 #gauche {
+  margin-top: 3em;
+  text-align: center;
+  animation: slideLeft 2s ease-in-out forwards;
+  animation-delay: 2000ms;
+  transform: translateX(-100%);
+}
+#page1 #gauche img {
+  height: 300px;
+  border: 1px solid black;
+  border-radius: 100px;
+  box-shadow: 0px 10px 100vh #2d3c76;
+  pointer-events: none;
+}
+@keyframes slideLeft {
+  to {
+    transform: translateX(0%);
+  }
+}
+@keyframes leftFadeIn {
+  to {
+    transform: translateX(0%);
+  }
+}
+#page1 #droite {
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+#page1 #droite p {
+  margin: 2em 2em 2em;
+}
+#page1 #droite span {
+  transform: translateX(-100%);
+  animation: leftFadeIn 2s ease-in-out forwards;
+  display: inline-block;
+  animation-delay: 2000ms;
+}
+@keyframes slideRight {
+  to {
+    transform: translateX(0%);
+  }
+}
+
+#page2 .content {
+  margin-top: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+#page2 .content .site {
+  flex: 0 0 25%;
+  margin: 5em 2em 5em;
+  text-align: center;
+}
+#page2 .content .site img {
+  border: 1px solid #dae5ff;
+  height: 250px;
+  width: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: 0.2s;
+}
+#page2 .content .site img:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+#page3 .content {
+  font-size: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  margin-top: 5vh;
+}
+#page3 .content div {
+  flex: 1 1 35%;
+}
+#page3 .content div p {
+  margin: 2em 2em 2em;
+}
+#page3 #illustration {
+  display: flex;
+  justify-content: center;
+  margin: 2em 0 2em;
+}
+#page3 #illustration img {
+  width: 90vw;
+  max-width: 750px;
+  max-height: 100%;
+  animation: movingImage 5s infinite;
+  transform: scale(0.9);
+  pointer-events: none;
+}
+
+@keyframes movingImage {
+  50% {
+    transform: scale(0.8);
+  }
+}
+#page4 .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#page4 .content #gauche {
+  font-size: 1.2rem;
+  margin: 2em 2em 2em;
+  text-align: center;
+}
+#page4 .content #droite img {
+  width: 50vw;
+  max-width: 1000px;
+  max-height: 100%;
+  pointer-events: none;
+}
+
+#page5 .content {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+#page5 .content .loisirs {
+  flex: 0 0 25%;
+  text-align: center;
+  margin: 2em 2em 2em;
+}
+#page5 .content .loisirs img {
+  border: 1px solid black;
+  height: 250px;
+  width: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: 0.2s;
+  pointer-events: none;
+}
+#page5 p {
+  margin: 0 1em 3em;
+}
+
+/* -------------------------- MEDIA QUERIES ----------------------------------------------*/
+@media screen and (max-width: 520px) {
+  nav {
+    display: none;
+  }
+  #page1 #bienvenue {
+    margin-top: 3em;
+  }
+  #page1 #droite p {
+    margin: 1em 1em 1em;
+    font-size: 1.2rem;
+  }
+  #page3 .content {
+    flex-direction: column;
+  }
+  #page3 .content div p {
+    margin: 0em 1em 1em;
+  }
+  #page5 .content .loisirs {
+    margin: 0em 1em;
+  }
+}
+@media screen and (max-width: 900px) {
+  nav ul li {
+    width: auto;
+    border-right: none;
+  }
+  nav ul li a {
+    font-size: 1.2rem;
+  }
+  #page1 #bienvenue h1 {
+    font-size: 1.7rem;
+  }
+  #page2 .content .site {
+    margin: 2.5em 1em 2.5em;
+  }
+  #page2 .content .site img {
+    max-height: 150px;
+    max-width: 150px;
+  }
+  #page3 .content {
+    font-size: 1.2rem;
+  }
+  #page4 .content #gauche {
+    margin: 2em 1em 2em;
+  }
+}
+@media screen and (min-width: 1200px) and (min-height: 750px) {
+  nav ul li {
+    border-right: 2px solid rgb(198, 209, 255);
+  }
+  nav ul li a {
+    font-size: 1.7em;
+  }
+  #page1 {
+    min-height: 120vh;
+  }
+  #page1 #bienvenue {
+    margin-top: 6em;
+  }
+  #page1 #bienvenue h1 {
+    font-size: 4em;
+  }
+  #page1 #bienvenue h2 {
+    font-size: 2em;
+  }
+  #page1 #gauche, #page1 #droite {
+    position: absolute;
+    top: 30%;
+    width: 50%;
+  }
+  #page1 #gauche img, #page1 #droite img {
+    height: 500px;
+  }
+  #page1 #droite {
+    top: 35%;
+    left: 50%;
+  }
+  #page1 #droite p {
+    margin-right: 4em;
+  }
+  #page3 .content div p {
+    margin: 2em 5em 2em;
+  }
+  #page4 .content {
+    flex-direction: row;
+    margin-top: 15vh;
+  }
+  #page4 .content #gauche {
+    font-size: 1.5rem;
+  }
+  #page4 .content #droite {
+    width: 50vw;
+  }
+  #page5 .content {
+    flex-direction: row;
+    margin-top: 15vh;
+  }
+  #page5 .content .loisirs {
+    margin: 0;
+  }
+  #page5 p {
+    font-size: 1.2rem;
+    margin-top: 5em;
+    text-align: center;
+  }
+}
+/* -------------------------- BOUTONS ----------------------------------------------*/
+.boutonHaut {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 1;
+  border: none;
+  outline: none;
+  background-color: #2d3c76;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10rem;
+  font-size: 1rem;
+}
+.boutonHaut i {
+  color: white;
+}
+.boutonHaut:hover {
+  background-color: #151c38;
+}
+
+#bouton-cv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2em;
+  animation: fadeIn 1s ease-in-out forwards;
+  animation-delay: 1900ms;
+  opacity: 0;
+}
+#bouton-cv a {
+  transition: 0.5s ease-out;
+  cursor: pointer;
+  padding: 1em 1.5em;
+  border-radius: 5px;
+  background-color: #2d3c76;
+  border: 2px solid #dae5ff;
+  color: #dae5ff;
+}
+#bouton-cv a:hover {
+  border: 2px solid #151c38;
+  background-color: transparent;
+  color: #151c38;
+  letter-spacing: 0.05rem;
+  padding: 1em 1.75em;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+.hidden {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.disappear {
+  transform: translateY(-150px);
+  opacity: 0;
+}
