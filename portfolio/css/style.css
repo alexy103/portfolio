@@ -109,6 +109,7 @@ nav ul li a:hover {
   }
 }
 #page1 #bienvenue {
+  margin-top: 10vh;
   text-align: center;
 }
 #page1 #bienvenue h1 {
