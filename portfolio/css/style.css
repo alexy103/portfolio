@@ -364,6 +364,9 @@ footer ul li p {
   #page3 .content div p {
     margin: 0em 1em 1em;
   }
+  #page4 .content #droite img {
+    animation: none;
+  }
   #page5 .content .loisirs {
     margin: 1em 0 0;
     flex-basis: 0%;
