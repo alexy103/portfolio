@@ -269,7 +269,6 @@ footer ul li {
 footer ul li img {
   height: 2em;
   width: 2em;
-  filter: invert(86%) sepia(4%) saturate(5785%) hue-rotate(190deg) brightness(99%) contrast(108%);
 }
 footer ul li p {
   transform: translateY(25%);
