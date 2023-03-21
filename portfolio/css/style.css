@@ -366,6 +366,7 @@ footer ul li p {
   }
   #page4 .content #droite img {
     animation: none;
+    transform: rotate(0deg);
   }
   #page5 .content .loisirs {
     margin: 1em 0 0;
