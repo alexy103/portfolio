@@ -4,15 +4,22 @@ html {
   scroll-behavior: smooth !important;
 }
 
+body {
+  background-color: #2d3c76;
+}
+
 * {
   -webkit-user-drag: none;
 }
 
-img, h1, h2 {
-  pointer-events: none;
+img, h1, h2, nav {
+  user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
-  user-select: none;
+}
+
+img, h1, h2 {
+  pointer-events: none;
 }
 
 nav {
@@ -39,9 +46,6 @@ nav ul li:last-child {
   border-right: none;
 }
 nav ul li a {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
   cursor: pointer;
   color: #c6d1ff;
   font-size: 1.2em;
@@ -73,11 +77,11 @@ nav ul li a:hover {
 .page:nth-child(even) * {
   color: #151c38;
 }
-.page:nth-child(even)::-moz-selection {
+.page:nth-child(even) *::-moz-selection {
   background-color: #2d3c76;
   color: #dae5ff;
 }
-.page:nth-child(even)::selection {
+.page:nth-child(even) *::selection {
   background-color: #2d3c76;
   color: #dae5ff;
 }
@@ -87,11 +91,11 @@ nav ul li a:hover {
 .page:nth-child(odd) * {
   color: #c6d1ff;
 }
-.page:nth-child(odd)::-moz-selection {
+.page:nth-child(odd) *::-moz-selection {
   background-color: #dae5ff;
   color: #151c38;
 }
-.page:nth-child(odd)::selection {
+.page:nth-child(odd) *::selection {
   background-color: #dae5ff;
   color: #151c38;
 }
@@ -274,6 +278,21 @@ footer ul li p {
   transform: translateY(25%);
   margin-left: 2em;
   color: #c6d1ff;
+}
+footer ul li a {
+  transition: 0.2s;
+}
+footer ul li a:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+footer *::-moz-selection {
+  background-color: #dae5ff;
+  color: #151c38;
+}
+footer *::selection {
+  background-color: #dae5ff;
+  color: #151c38;
 }
 
 /* ----------------------------- BOUTONS ----------------------------- */

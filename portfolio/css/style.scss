@@ -9,15 +9,23 @@ html {
 	scroll-behavior: smooth !important;
 }
 
+body{
+	background-color: $background-blue;
+}
+
 * {
 	-webkit-user-drag: none;
 }
 
-img, h1, h2 {
-	pointer-events: none;
+
+img, h1, h2, nav{
+	user-select: none;
 	-webkit-user-select: none;
 	-moz-user-select: none;
-	user-select: none;
+}
+
+img, h1, h2{
+	pointer-events: none;
 }
 
 nav {
@@ -41,9 +49,6 @@ nav {
 				border-right: none;
 			}
 			a {
-				-webkit-user-select: none;
-				-moz-user-select: none;
-				user-select: none;
 				cursor: pointer;
 				color: $clair;
 				font-size: 1.2em;
@@ -74,28 +79,28 @@ nav {
 		background-color: $background-white;
 		* {
 			color: $fonce;
-		}
-		&::-moz-selection {
-			background-color: $background-blue;
-			color: $background-white;
-		}
-		&::selection {
-			background-color: $background-blue;
-			color: $background-white;
+			&::-moz-selection {
+				background-color: $background-blue;
+				color: $background-white;
+			}
+			&::selection {
+				background-color: $background-blue;
+				color: $background-white;
+			}
 		}
 	}
 	&:nth-child(odd) {
 		background-color: $background-blue;
 		* {
 			color: $clair;
-		}
-		&::-moz-selection {
-			background-color: $background-white;
-			color: $fonce;
-		}
-		&::selection {
-			background-color: $background-white;
-			color: $fonce;
+			&::-moz-selection {
+				background-color: $background-white;
+				color: $fonce;
+			}
+			&::selection {
+				background-color: $background-white;
+				color: $fonce;
+			}
 		}
 	}
 }
@@ -284,7 +289,24 @@ footer{
 				margin-left: 2em;
 				color: $clair;
 			}
+			a{
+				transition: 0.2s;
+				&:hover{
+				cursor: pointer;
+				transform: scale(1.1);
+				}
+			}
 		}		
+	}
+	*{
+		&::-moz-selection {
+		background-color: $background-white;
+		color: $fonce;
+		}
+		&::selection {
+			background-color: $background-white;
+			color: $fonce;
+		}
 	}
 }
 

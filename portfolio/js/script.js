@@ -62,3 +62,7 @@ function reveal() {
   
 window.addEventListener("scroll", reveal);
 reveal();
+
+function sendMail(){
+  window.location.href = link;
+}
