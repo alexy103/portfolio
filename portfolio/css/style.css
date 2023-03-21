@@ -1,7 +1,7 @@
 html {
   font-family: "Montserrat", sans-serif;
   overflow-x: hidden;
-  scroll-behavior: smooth;
+  scroll-behavior: smooth !important;
 }
 
 * {
@@ -57,9 +57,10 @@ nav ul li a:hover {
 }
 
 .page {
-  min-height: 100vh;
+  min-height: 95vh;
   display: flex;
   flex-direction: column;
+  scroll-margin-top: 5vh;
 }
 .page .titre {
   text-align: center;
@@ -94,10 +95,10 @@ nav ul li a:hover {
   background-color: #dae5ff;
   color: #151c38;
 }
-.page:not(:first-child) {
+
+#page1 {
   min-height: 100vh;
 }
-
 #page1 #bienvenue {
   margin-top: 10vh;
   text-align: center;
@@ -129,7 +130,7 @@ nav ul li a:hover {
   margin-top: 3em;
   text-align: center;
   animation: slideLeft 2s ease-in-out forwards;
-  animation-delay: 2000ms;
+  animation-delay: 2s;
   transform: translateX(-100%);
 }
 #page1 #gauche img {
@@ -154,7 +155,7 @@ nav ul li a:hover {
   transform: translateX(-100%);
   animation: leftFadeIn 2s ease-in-out forwards;
   display: inline-block;
-  animation-delay: 2000ms;
+  animation-delay: 2s;
 }
 
 #page2 .content {
@@ -162,18 +163,18 @@ nav ul li a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  align-items: center;
 }
 #page2 .content .site {
   flex: 0 0 25%;
-  margin: 5em 2em 5em;
+  margin: 2em 2em 2em;
   text-align: center;
 }
 #page2 .content .site img {
-  border: 1px solid #dae5ff;
   height: 250px;
   width: 250px;
   -o-object-fit: cover;
-  object-fit: cover;
+  object-fit: scale-down;
   transition: 0.2s;
   pointer-events: auto;
 }
@@ -222,19 +223,20 @@ nav ul li a:hover {
   width: 50vw;
   max-width: 1000px;
   max-height: 100%;
+  animation: leftRight 5s infinite;
+  transform: rotate(-3deg);
 }
 
 #page5 .content {
   margin-top: 2em;
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 #page5 .content .loisirs {
-  flex: 0 0 25%;
   text-align: center;
   margin: 2em 2em 2em;
+  flex-basis: 40%;
 }
 #page5 .content .loisirs img {
   border: 1px solid black;
@@ -243,70 +245,43 @@ nav ul li a:hover {
   -o-object-fit: cover;
   object-fit: cover;
   transition: 0.2s;
+  animation: gaucheDroite 4s ease-in-out infinite;
 }
 #page5 p {
   margin: 0 1em 3em;
 }
 
-#page6 {
-  min-height: 30vh;
+footer {
+  width: 100%;
+  height: 5vh;
+  background-color: #2d3c76;
 }
-#page6 .content {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  margin-top: 5em;
-}
-#page6 .content div {
+footer ul {
   display: flex;
-  justify-content: center;
   align-items: center;
+  height: 100%;
 }
-#page6 .content div:nth-child(1) {
-  grid-area: 1/1/2/3;
+footer ul li {
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
 }
-#page6 .content div:nth-child(2) {
-  grid-area: 1/1/2/2;
+footer ul li img {
+  height: 2em;
+  width: 2em;
+  filter: invert(86%) sepia(4%) saturate(5785%) hue-rotate(190deg) brightness(99%) contrast(108%);
 }
-#page6 .content div:nth-child(3) {
-  grid-area: 1/2/2/3;
-}
-#page6 .content div:nth-child(4) {
-  grid-area: 2/1/3/3;
-}
-#page6 .content div:nth-child(5) {
-  grid-area: 2/1/3/2;
-}
-#page6 .content div:nth-child(6) {
-  grid-area: 2/2/3/3;
-}
-#page6 .content .mail {
-  margin-bottom: 2em;
-}
-#page6 .content .tel {
-  margin-bottom: 2em;
-}
-#page6 .content .logo {
-  width: 30vw;
-  margin-left: 5vw;
-}
-#page6 .content .logo img {
-  height: 100px;
-  width: 100px;
-}
-#page6 .content .texte {
-  margin-top: 0.5em;
-  width: 60vw;
-  font-size: 1.5rem;
+footer ul li p {
+  transform: translateY(25%);
+  margin-left: 2em;
+  color: #c6d1ff;
 }
 
 /* ----------------------------- BOUTONS ----------------------------- */
 .boutonHaut {
   display: none;
   position: fixed;
-  bottom: 20px;
+  bottom: 5vh;
   right: 30px;
   z-index: 1;
   border: none;
@@ -390,20 +365,20 @@ nav ul li a:hover {
     margin: 0em 1em 1em;
   }
   #page5 .content .loisirs {
-    margin: 0em 1em;
+    margin: 1em 0 0;
+    flex-basis: 0%;
   }
   #page5 p {
     margin-top: 2em;
   }
-  #page6 .content .texte {
-    font-size: 1rem;
+  footer ul li img {
+    height: 1em;
+    width: 1em;
   }
-  #page6 .content .logo {
-    margin-left: 2vw;
-  }
-  #page6 .content .logo img {
-    height: 70px;
-    width: 70px;
+  footer ul li p {
+    transform: translateY(0%);
+    margin-left: 1em;
+    font-size: 0.8rem;
   }
 }
 @media screen and (max-width: 900px) {
@@ -414,21 +389,40 @@ nav ul li a:hover {
   nav ul li a {
     font-size: 1.2rem;
   }
+  .page {
+    min-height: 100vh;
+  }
   #page1 #bienvenue h1 {
     font-size: 1.7rem;
   }
+  #page2 .content {
+    min-height: 90vh;
+  }
   #page2 .content .site {
-    margin: 2.5em 1em 2.5em;
+    margin: 0.5em 1em 0.5em;
   }
   #page2 .content .site img {
-    max-height: 150px;
-    max-width: 150px;
+    min-width: 150px;
+    min-height: 150px;
+    height: 30vw;
+    width: 30vw;
   }
   #page3 .content {
     font-size: 1.2rem;
   }
   #page4 .content #gauche {
     margin: 2em 1em 2em;
+  }
+  #page4 .content #droite img {
+    min-width: 300px;
+  }
+  #page5 .content .loisirs {
+    margin: 1em 0 1em;
+    flex-basis: 50%;
+  }
+  #page5 .content .loisirs img {
+    height: 200px;
+    width: 200px;
   }
 }
 @media screen and (min-width: 1200px) and (min-height: 750px) {
@@ -437,9 +431,6 @@ nav ul li a:hover {
   }
   nav ul li a {
     font-size: 1.7em;
-  }
-  #page1 {
-    min-height: 120vh;
   }
   #page1 #bienvenue {
     margin-top: 6em;
@@ -489,6 +480,7 @@ nav ul li a:hover {
     margin-top: 15vh;
   }
   #page5 .content .loisirs {
+    flex-basis: 0;
     margin: 0;
   }
   #page5 p {
@@ -496,12 +488,13 @@ nav ul li a:hover {
     margin-top: 8em;
     text-align: center;
   }
-  #page6 .content .texte {
-    font-size: 2rem;
-    margin-top: 1em;
-  }
 }
 /* -----------------------------------ANIMATIONS----------------------------------- */
+@keyframes leftRight {
+  50% {
+    transform: rotate(3deg);
+  }
+}
 @keyframes slideTop {
   from {
     transform: translateY(-100%);
