@@ -1,0 +1,542 @@
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+html {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle;
+}
+
+.instructions{
+    line-height:1em; 
+    margin:0 auto; 
+    padding:40px; 
+    width:800px; 
+    background:rgb(228, 228, 228); 
+    margin-top: 40px;
+    border-radius:15px;
+}
+
+
+body{
+    background-color: #015486;
+    color: white;
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    user-select: none;
+    overflow: hidden;
+}
+
+nav{
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15vh;
+    z-index: 2;
+}
+
+nav #croixmenu{
+    position: absolute;
+    top: -13vh;
+    right: 5vw;
+}
+
+nav ul{
+    text-align: center;
+}
+
+nav ul li{
+    text-transform: uppercase;
+    margin-bottom: 15vh;
+}
+
+#content{
+    margin-top: 5vh;
+}
+
+#logo{
+    display: none;
+}
+
+#croix{
+    cursor: pointer;
+    position: absolute;
+    top: 2vh;
+    right: 5vw;
+}
+
+#sous-menu{
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+#sous-menu li{
+    margin: 0 1vw 3vh;
+    transition: 1s;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+#sous-menu-gras{
+    margin-top: 5vh;
+    margin-left: 1em;
+    font-weight: bold;
+}
+
+#sous-menu-gras li{
+    margin-bottom: 1em;
+    cursor: pointer;
+    width: fit-content;
+}
+
+#photo{
+    margin-left: 10vw;
+    width: 80vw;
+    height: 50vh;
+    border-radius: 7px;
+}
+
+#boutons ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 5vh;
+}
+
+#boutons ul li{
+    border: 1px solid rgba(255, 255, 255, 0.582);
+    padding: 1em;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: .5s;
+    margin-bottom: 1em;
+}
+
+#boutons ul li:hover{
+    background-color: #ebf2f4;
+    color: #015486;
+}
+
+#boutons ul i{
+    margin-right: 1em;
+}
+
+.welcome{
+    display: flex;
+    font-size: 5rem;
+    margin: 35vh auto 10vh;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.582);
+    width: fit-content;
+}
+
+.build{
+    display: none;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 85vh;
+    font-size: 2rem;
+}
+
+.build h1{
+    margin: 5vh auto;
+}
+
+.build i{
+    animation: up-down 5s infinite;
+}
+
+.build i:last-child{
+    animation: down-up 5s infinite;
+}
+
+/* -------------------------------- Media Queries */
+@media screen and (min-width: 700px) {
+    #logo{
+        position: absolute;
+        display: block;
+        margin-top: 3vh;
+        margin-left: 3vh;
+        top: 0;
+        width: 10%;
+        height: 10vh;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    #logo p:first-child{
+        font-size: 300%;
+    }
+
+    #logo p:last-child{
+        font-size: 150%;
+        letter-spacing: .15em;
+    }
+
+    #croixmenu, #croixcontent, #croix{
+        display: none;
+    }
+
+    nav{
+        position: relative;
+        width: 70%;
+        left: 15%;
+        margin: 5vh 0 0;
+    }
+    
+    nav ul{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    
+    nav ul li {
+        font-weight: 600;
+        margin-bottom: 0;
+        cursor: pointer;
+        transition: 1s;
+        position: relative;
+    }
+    
+    #content{
+        z-index: 1;
+        display: none;
+        flex-wrap: wrap;
+        margin-top: 10vh;
+        margin-left: 15vw;
+        margin-right: 15vw;
+    }
+
+    #maincontent{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #sous-menu{
+        flex-direction: column;
+    }
+
+    #sous-menu li{
+        width: fit-content;
+        margin: 0 0 5vh;
+    }
+
+    #sous-menu li::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        border-radius: 5px;
+        height: 0.05em;
+        bottom: -5px;
+        left: 0;
+        background: currentcolor;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+    }
+    
+    #sous-menu li:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+
+    #sous-menu li:hover{
+        margin-left: 1em;
+    }
+
+    #sous-menu li:before{
+        position: absolute;
+        content: '•';
+        transform: translate(-120%, -35%);
+        font-size: 4rem;     
+        transition: .5s;
+        opacity: 0;
+    }
+
+    #sous-menu li:hover::before{
+        opacity: 1;
+    }
+
+    #photo{
+        width: 30vw;
+        flex-grow: 2;
+        height: auto;
+        margin: 0 3em 0 0;
+    }
+
+    #sous-menu-gras{
+        margin: 10vh 5vw 0 0;
+    }
+    
+    #sous-menu-gras li:first-child{
+        margin-bottom: 1.7em;
+    }
+    
+    #sous-menu-gras li{
+        transition:  all 1s;
+    }
+    
+    #sous-menu-gras li:hover{
+        letter-spacing: .1em;
+    }
+    
+    #boutons{
+        flex-grow: 2;
+    }
+
+    #boutons ul{
+        justify-content: space-between;
+    }
+
+    #boutons ul li{
+        width: 20%;
+        padding: 1.3em;
+    }
+
+    #homemenu li a:hover{
+        letter-spacing: 1rem;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    #content{
+        margin-left: 5vw;
+        margin-right: 5vw;
+    }
+
+    #boutons ul a{
+        width: fit-content;
+        padding: 1.3em;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    nav{
+        margin-left: 5em;
+    }
+
+    #content{
+        margin-left: 2vw;
+        margin-right: 2vw;
+    }
+
+    #boutons ul li{
+        width: fit-content;
+        padding: 1.3em;
+    }
+
+    .welcome{
+        font-size: 4rem;
+    }
+}
+
+@media screen and (min-width: 700px) and (max-width: 900px) {
+    #photo{
+        width: 50vw;
+    }
+
+    #content{
+        width: 100vw;
+    }
+
+    #sous-menu{
+        flex-direction: row;
+    }
+
+    #sous-menu li{
+        margin: 1em 2em 0;
+        text-align: center;
+    }
+
+    .welcome{
+        font-size: 3rem;
+    }
+
+    #homemenu li{
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 699px) {
+    nav{
+        margin-left: 0;
+    }
+
+    #boutons, #photo{
+        display: none;
+    }
+
+    #maincontent{
+        display: none;
+    }
+
+    #boutons ul li{
+        padding: 1em;
+    }
+
+    .welcome{
+        font-size: 2rem;
+    }
+
+    #homemenu li{
+        font-size: 2rem;
+    }
+
+    #menu{
+        left: -100vw;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #boutons ul a{
+        padding: .3em;
+    }
+
+    .welcome{
+        font-size: 1.5rem;
+        margin-bottom: 2.5vh;
+    }
+
+    #homemenu{
+        flex-direction: column;
+        margin: 0;
+    }
+
+    #homemenu li{
+        margin-top: 10vh;
+    }
+}
+
+/* Les effets n'apparaissent qu'à partir de 1050px */
+@media screen and (min-width: 1050px){
+    nav ul li::before, nav ul li::after, nav ul li span::before, nav ul li span::after {
+        position: absolute;
+        content: '•';
+        width: fit-content;
+        transform: translate(-200%, -20%);
+        font-size: 2rem;
+        opacity: 0;
+        transition: .5s;
+    }
+    
+    nav ul li:hover::before {
+        opacity: 1;
+    }
+    
+    nav ul li::after{
+        transform: translate(100%, -20%);
+    }
+    
+    nav ul li:hover::after {
+        opacity: 1;
+    }
+    
+    nav ul li span::before{
+        transform: translate(-3em, 0.4em);
+        font-size: .8rem;
+    }
+    
+    nav ul li span:hover::before {
+        opacity: 1;
+    }
+    
+    nav ul li span::after{
+        transform: translate(2.7em, 0.3em);
+        font-size: .8rem;
+    }
+    
+    nav ul li span:hover::after {
+        opacity: 1;
+    }    
+}
+
+/* -------------------------------- Animations */
+@keyframes up-down{
+    0%{
+        transform: translateY(-75%);
+    }
+    50%{
+        transform: translateY(75%);
+    }
+    100%{
+        transform: translateY(-75%);
+    }   
+}
+
+@keyframes down-up{
+    0%{
+        transform: translateY(75%);
+    }
+    50%{
+        transform: translateY(-75%);
+    }
+    100%{
+        transform: translateY(75%);
+    }   
+}
+
+.fadeIn {
+    animation: fadeIn 0.8s;
+}
+
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.slideDown{
+    animation: slideDown 1s;
+}
+
+@keyframes slideDown {
+    from{
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.slideLeft{
+    animation: slideLeft 1s;
+}
+
+@keyframes slideLeft {
+    from{
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+

@@ -175,8 +175,9 @@ nav ul li a:hover {
   text-align: center;
 }
 #page2 .content .site img {
-  height: 250px;
-  width: 250px;
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
   -o-object-fit: cover;
   object-fit: scale-down;
   transition: 0.2s;

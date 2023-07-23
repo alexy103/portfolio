@@ -178,8 +178,9 @@ nav {
 			text-align: center;
 			img {
 				// border: 1px solid $background-white;
-				height: 250px;
-				width: 250px;
+				border-radius: 10px;
+				height: 100%;
+				width: 100%;
 				-o-object-fit: cover;
 				object-fit: scale-down;
 				transition: 0.2s;
