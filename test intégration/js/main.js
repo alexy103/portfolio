@@ -98,13 +98,13 @@ const sousMenuItems = document.getElementById("sous-menu").children;
 for (let i = 0; i < sousMenuItems.length; i++) {
     sousMenuItems[i].addEventListener('click', function () {
         const images = [
-            'test intégration/img/beach-golden-hour-grass-1192671.jpg',
-            'test intégration/img/beautiful-daylight-environment-709552.jpg',
-            'test intégration/img/bloom-blossom-flora-60006.jpg',
-            'test intégration/img/conifer-daylight-environment-338936.jpg',
-            'test intégration/img/pexels-photo-688660.jpeg',
-            'test intégration/img/pexels-photo-730256.jpeg',
-            'test intégration/img/pexels-photo-891252.jpeg'
+            'https://raw.githubusercontent.com/alexy103/portfolio/main/test%20int%C3%A9gration/img/beach-golden-hour-grass-1192671.jpg',
+            'https://raw.githubusercontent.com/alexy103/portfolio/main/test%20int%C3%A9gration/img/beautiful-daylight-environment-709552.jpg',
+            'https://raw.githubusercontent.com/alexy103/portfolio/main/test%20int%C3%A9gration/img/bloom-blossom-flora-60006.jpg',
+            'https://raw.githubusercontent.com/alexy103/portfolio/main/test%20int%C3%A9gration/img/conifer-daylight-environment-338936.jpg',
+            'https://raw.githubusercontent.com/alexy103/portfolio/main/test%20int%C3%A9gration/img/pexels-photo-688660.jpeg',
+            'https://raw.githubusercontent.com/alexy103/portfolio/main/test%20int%C3%A9gration/img/pexels-photo-730256.jpeg',
+            'https://raw.githubusercontent.com/alexy103/portfolio/main/test%20int%C3%A9gration/img/pexels-photo-891252.jpeg'
         ];
     photo.src = images[i];
     });
